@@ -52,7 +52,7 @@ findAssocs(dtm, terms = 'harvard', corlimit = 0.7)
 barplot(d[1:10, ]$freq, las = 2, names.arg = d[1:10, ]$word, col = 'lightblue', main = '발생 빈도 상위 단어', ylab = '단어 빈도')
 
 #한글로 텍스트 구름 제작
-kt = readLines('https://ko.wikipedia.org/wiki/%EB%B9%85_%EB%8D%B0%EC%9D%B4%ED%84%B0')
+kt = readLines('https://ko.wikipedia.org/wiki/%EB%B0%B1%EB%85%84_%EC%A0%84%EC%9F%81')
 kd = htmlParse(kt, asText = TRUE)
 kcdoc = xpathSApply(kd, '//p', xmlValue)
 
@@ -71,5 +71,5 @@ inspect(kdtm)
 km = as.matrix(kdtm)
 kv = sort(colSums(km), decreasing = TRUE)
 kd = data.frame(word = names(kv), freq = kv)
-kd1 = kd[1:200, ]
+kd1 = kd[1:500, ]
 wordcloud2(kd1)
