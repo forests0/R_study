@@ -35,3 +35,4 @@ f <- function(x) (x^2 - 2)
 newton(f2)
 f <- function(x) (x^3 + 3 * x^2 - 6 * x -8)
 newton(f3)
+
