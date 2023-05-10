@@ -17,5 +17,6 @@ inspect(rules[1:5])
 # 그 데이터들을 confidence를 기준으로 오름차순정렬을 함
 rules <- sort(rules, by = 'confidence', decreasing = FALSE)
 inspect(rules[1:5])
-
 help(apriori)
+
+head(rules)
