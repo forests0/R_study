@@ -12,7 +12,8 @@ class(babys)
 nbabys = babys[ order(babys$Rank, decreasing = TRUE), ]
 #plot(nbabys)
 
-ggplot(nbabys, aes(x = Ethnicity, y = Count, col = Gender)) + geom_point()
-ggplot(nbabys, aes(x = Rank, y = Year.of.Birth, col = Gender)) + geom_point()
+nbabys %>% filter(if_any()) %>% ggplot(nbabys, aes(x = Ethnicity, y = Count, col = Gender)) + geom_point()
+ggplot(nbabys, aes(x = Ethnicity, y = Rank, col = Gender)) + geom_count()
 
-is.na(nbabys)
+#데이터들의 결측값이 얼마나 있는지 보여줌
+colSums(is.na(nbabys))
