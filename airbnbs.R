@@ -12,5 +12,7 @@ airbnb = na.omit(airbnb)
 summary(airbnb)
 mean(airbnb$price)
 
-airbnb %>% ggplot() + geom_point(aes(x = price, y = bedrooms), color = "blue", size = 1.5, shape = 16, alpha = 0.5)
-airbnb %>% ggplot() + geom_histogram(aes(x = ))
+filtered_bedroom <- airbnb %>% filter(bedrooms > 5)
+
+ggplot(airbnb) + geom_point(aes(x = review_scores_cleanliness, y = bedrooms), color = "blue", size = 1.5, shape = 16, alpha = 0.5)
+ggplot(airbnb, aes(x = bedrooms)) + geom_histogram()
