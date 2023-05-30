@@ -9,11 +9,10 @@ airbnb$host_total_listings_count[is.na(airbnb$host_total_listings_count)] <- 0
 airbnb$host_response_rate[is.na(airbnb$host_response_rate)] <- 0
 airbnb$host_acceptance_rate[is.na(airbnb$host_acceptance_rate)] <- 0
 airbnb = na.omit(airbnb)
+
 colSums(is.na(airbnb))
 nrow(airbnb) # 187828
-
 summary(airbnb)
-filtered_bedroom <- airbnb %>% filter(bedrooms > 5)
 
 ggplot(airbnb) + geom_point(aes(x = review_scores_rating , y = price, col = room_type), size = 1.5, shape = 16, alpha = 0.5)
 #침대 종류에 따른 개수를 보기 위함함
