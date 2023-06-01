@@ -28,6 +28,4 @@ ggplot(airbnb, aes(x = accommodates, y = review_scores_cleanliness, col = room_t
 ggplot(airbnb, aes(x = price, y = review_scores_rating)) + xlim(1,55000) +geom_bin_2d(bins = 100) + scale_fill_gradient(low = "lightblue", high = "blue")
 #도시에 따른 리뷰 점수 분포도가 궁금함. 보니 홍콩의 평균이 가장 낮음.
 ggplot(airbnb, aes(x = city, y = review_scores_rating)) + geom_boxplot() + xlab('review_score') 
-ggplot(airbnb, aes(x = city)) + geom_bar()
-
-
+ggplot(airbnb, aes(x = city, y = price)) + geom_point()
