@@ -8,5 +8,8 @@ colSums(is.na(stock_monthly)) # NA 값이 없음.
 stock_monthly$Date <- as.Date(stock_monthly$Date)
 stock_weekly$Date <- as.Date(stock_weekly$Date)
 
-ggplot(stock_monthly, aes(x = High, y = )) + geom_bar()
+#날짜에 따른 최대 가격
+ggplot(stock_monthly, aes(x = High, y =Price, col = Date)) + geom_point()
+#같은 논지로 최소 가격 또한 올라가는중
+ggplot(stock_monthly, aes(x = Low, y =Price, col = Date)) + geom_point()
 
