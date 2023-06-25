@@ -12,6 +12,6 @@ stock_weekly$Date <- as.Date(stock_weekly$Date)
 ggplot(stock_monthly, aes(x = High, y =Price, col = Date)) + geom_point()
 #같은 논지로 최소 가격 또한 올라가는중
 ggplot(stock_monthly, aes(x = Low, y =Price, col = Date)) + geom_point()
-
-ggplot(stock_monthly, aes(x = close, y =Price)) + geom_bin2d()
+#가격대 변화를 boxplot으로 체크0
+ggplot(stock_monthly, aes(x = Price)) + geom_boxplot()
 
