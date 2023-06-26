@@ -14,5 +14,5 @@ ggplot(stock_monthly, aes(x = High, y =Price, col = Date)) + geom_point()
 ggplot(stock_monthly, aes(x = Low, y =Price, col = Date)) + geom_point()
 #가격대 변화를 boxplot으로 체크
 ggplot(stock_monthly, aes(x = Price)) + geom_boxplot()
-
+#volume(총 거래량으로 추측) 을 Date와 같이 violine으로 보는중
 ggplot(stock_monthly, aes(x = Date, y = Volume)) + geom_violin() + scale_y_log10()
