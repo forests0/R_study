@@ -17,5 +17,8 @@ ggplot(stock_monthly, aes(x = Price)) + geom_boxplot()
 #volume(총 거래량으로 추측) 을 Date와 같이 violin으로 보는중
 ggplot(stock_monthly, aes(x = Date, y = Volume)) + geom_violin() + scale_y_log10()
 #그렇다면 데이터들을 2020 이후로 줄여서 본다면 어떨까?
-filtered_dates <- stock_monthly[stock_monthly$Date >= as.Date("2020-01-01")]
-ggplot(stock_monthly, aes(x = Low, y =Price, col = filtered_dates)) + geom_point()
+stock_monthly %>% filter(Date >= as.Date("2020-01-01")) %>% ggplot(aes(x = Low, y =Price, col = Date)) + geom_point()
+#x를 Date로 해놓은 뒤, 가격을 col에 놓는 것이 내가 원하는 결과
+stock_monthly %>% filter(Date >= as.Date("2020-01-01")) %>% ggplot(aes(x = Date, y =Price, col = Price)) + geom_point()
+
+
