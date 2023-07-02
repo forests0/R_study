@@ -26,5 +26,6 @@ ggplot(stock_monthly, aes(x = Date, y = Close, col = High)) + geom_point() + geo
 stock_monthly %>% filter(Date >= as.Date('2018-01-01') & Date <= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Close, col = High)) + geom_point()
 #그렇다면 2020년 이전의 양들을 보자.
 stock_monthly %>% filter(Date <= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Volume)) + geom_point() + scale_y_log10()
+#그래도 색상 구분을 해주면 설명을 할 때 더 도움이 될 듯
 stock_monthly %>% filter(Date <= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Volume, col = High)) + geom_point() + scale_y_log10()
 
