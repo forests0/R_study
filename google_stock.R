@@ -28,8 +28,10 @@ stock_monthly %>% filter(Date >= as.Date('2018-01-01') & Date <= as.Date('2020-0
 stock_monthly %>% filter(Date <= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Volume)) + geom_point() + scale_y_log10()
 #그래도 색상 구분을 해주면 설명을 할 때 더 도움이 될 듯
 stock_monthly %>% filter(Date <= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Volume, col = High)) + geom_point() + scale_y_log10()
+stock_monthly %>% filter(Date <= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Price, col = High)) + geom_point() + scale_y_log10()
 #2020년도 이후로 보면 코로나 시절 (2021-2022) 때가 가장 High가 높고 Volume도 꾸준한 편
 #코로나가 시장에 얼마나 큰 영향을 미쳤는지 알 수 있는 부분일듯.
 stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Volume, col = High)) + geom_point() + scale_y_log10()
 #Price로 보니 코로나때 얼마나 증가했는지 알수있는듯. 더 정확하다고 생각.
 stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Price, col = High)) + geom_point() + scale_y_log10()
+stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Price, col = Low)) + geom_point() + scale_y_log10()
