@@ -35,3 +35,5 @@ stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date,
 #Price로 보니 코로나때 얼마나 증가했는지 알수있는듯. 더 정확하다고 생각.
 stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Price, col = High)) + geom_point() + scale_y_log10()
 stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Price, col = Low)) + geom_point() + scale_y_log10()
+#geom_point()말고 다른 plot을 사용하려면 어떤 plot이 좋을까
+ggplot(stock_monthly, aes(x = Date, y = Price)) + geom_() + scale_y_log10()
