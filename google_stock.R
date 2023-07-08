@@ -37,3 +37,4 @@ stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date,
 stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Price, col = Low)) + geom_point() + scale_y_log10()
 #geom_point()말고 다른 plot을 사용하려면 어떤 plot이 좋을까
 ggplot(stock_monthly, aes(x = Date, y = Price)) + geom_spoke(angle = 60, radius = 0.3) + scale_y_log10()
+ggplot(stock_monthly, aes(x = Date, y = Price)) + geom_bo() + scale_y_log10()
