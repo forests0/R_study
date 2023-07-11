@@ -39,4 +39,4 @@ stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date,
 ggplot(stock_monthly, aes(x = Date, y = Price)) + geom_spoke(angle = 60, radius = 0.3) + scale_y_log10()
 ggplot(stock_monthly, aes(y = Price)) + geom_histogram()
 ggplot(stock_monthly, aes(x = Date, y = Price,)) + geom_polygon()
-ggplot(stock_monthly, aes(x = Date, y = Price)) + geom_errorbar(ymin = 100, xmin = as.Date('2020.01.01'))
+ggplot(stock_monthly, aes(x = Date, y = Price)) + geom_hline()
