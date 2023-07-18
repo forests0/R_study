@@ -8,10 +8,12 @@ colSums(is.na(stock_monthly)) # NA 값이 없음.
 stock_monthly$Date <- as.Date(stock_monthly$Date)
 stock_weekly$Date <- as.Date(stock_weekly$Date)
 
+head(stock_monthly, 5)
+
 #날짜에 따른 최대 가격
-ggplot(stock_monthly, aes(x = High, y =Price, col = Date)) + geom_point()
+ggplot(stock_monthly, aes(x = High, y =Price, col = Date)) + geom_point() + geom_abline(intercept = 0, slope = 1, color = "red")
 #같은 논지로 최소 가격 또한 올라가는중
-ggplot(stock_monthly, aes(x = Low, y =Price, col = Date)) + geom_point()
+ggplot(stock_monthly, aes(x = Low, y =Price, col = Date)) + geom_point() + geom_abline(intercept = 0, slope = 1, color = "red")
 #가격대 변화를 boxplot으로 체크
 ggplot(stock_monthly, aes(x = Price)) + geom_boxplot()
 #volume(총 거래량으로 추측) 을 Date와 같이 violin으로 보는중
