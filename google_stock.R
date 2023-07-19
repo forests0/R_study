@@ -8,8 +8,6 @@ colSums(is.na(stock_monthly)) # NA 값이 없음.
 stock_monthly$Date <- as.Date(stock_monthly$Date)
 stock_weekly$Date <- as.Date(stock_weekly$Date)
 
-head(stock_monthly, 5)
-
 #날짜에 따른 최대 가격
 ggplot(stock_monthly, aes(x = High, y =Price, col = Date)) + geom_point() + geom_abline(intercept = 0, slope = 1, color = "red")
 #같은 논지로 최소 가격 또한 올라가는중
@@ -39,6 +37,5 @@ stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date,
 stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date, y = Price, col = Low)) + geom_point() + scale_y_log10()
 #geom_point()말고 다른 plot을 사용하려면 어떤 plot이 좋을까
 ggplot(stock_monthly, aes(x = Date, y = Price)) + geom_spoke(angle = 60, radius = 0.3) + scale_y_log10()
-ggplot(stock_monthly, aes(y = Price)) + geom_histogram()
 ggplot(stock_monthly, aes(x = Date, y = Price,)) + geom_polygon()
 
