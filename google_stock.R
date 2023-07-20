@@ -39,3 +39,9 @@ stock_monthly %>% filter(Date >= as.Date('2020-01-01')) %>% ggplot(aes(x = Date,
 ggplot(stock_monthly, aes(x = Date, y = Price)) + geom_spoke(angle = 60, radius = 0.3) + scale_y_log10()
 ggplot(stock_monthly, aes(x = Date, y = Price,)) + geom_polygon()
 
+
+stock_monthly %>% filter(Date >= as.Date("2020-01-01")) %>% ggplot(aes(x = Date, y =Price, col = High)) + geom_point()
+stock_monthly %>% filter(Date <= as.Date("2020-01-01")) %>% ggplot(aes(x = Date, y =Price, col = High)) + geom_point()
+
+stock_monthly %>% filter(Date <= as.Date('2020-01-01')) %>% ggplot(stock_monthly, aes(x = Date, y = Close, col = High)) + geom_point() + geom_abline(intercept = 0, slope = 1, color = "red")
+ggplot(stock_monthly, aes(x = Date, y = Price, col = High)) + geom_point() + geom_abline(intercept = 0, slope = 1, color = "red")
