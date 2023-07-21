@@ -7,7 +7,7 @@ require('rpart.plot')
 require('party')
 require('randomForest')
 
-ucla = read.csv('https://stats.idre.ucla.edu/stat/data/binary.csv')
+ucla = read.csv('https://stats.idre.ucla.edu/stat/data/binary.csv') # 정상 작동함. 오류 수정.
 str(ucla)
 
 ucla$admit = factor(ucla$admit) # 실습 자료 중 admit 은 범주형으로 전환
@@ -36,3 +36,4 @@ summary(r)
 # 이 모든 학습들의 문제는 train 데이터가 test에도 사용된다는 점임
 # train 데이터와 test 데이터를 구분해서 학습 / 테스트가 되어야 하는데 그러지 못함
 # 그러면 이제 구분해서 해야함
+
