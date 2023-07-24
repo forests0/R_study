@@ -11,7 +11,7 @@ airbnb$host_acceptance_rate[is.na(airbnb$host_acceptance_rate)] <- 0
 airbnb = na.omit(airbnb)
 
 colSums(is.na(airbnb))
-nrow(airbnb) # 187828
+nrow(airbnb) # NA 값 확인. 187828개 존재
 summary(airbnb)
 
 ggplot(airbnb) + geom_point(aes(x = review_scores_rating , y = price, col = room_type), size = 1.5, shape = 16, alpha = 0.5)
