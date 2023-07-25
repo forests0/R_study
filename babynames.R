@@ -4,7 +4,6 @@ require('arules')
 require('arulesViz')
 
 babys = read.csv("C:/Users/NGY/Desktop/2023/Rstudy/Popular_Baby_Names.csv")
-babys
 
 summary(babys)
 class(babys)
