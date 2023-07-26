@@ -31,4 +31,4 @@ nh =  glm(survival ~ age + no_nodes, data = haberman, family = binomial) # 필�
 deviance(nh) # 그러나 큰 변화가 없는 것을 보아 특징 선택을 하지 않아도 될듯
 
 newp2 = data.frame(age = c(37,66), no_nodes=c(5,32))
-predict(nh, newdata = newp2, type = 'response') #결과 또한 비슷함
+predict(nh, newdata = newp2, type = 'response') #결과
