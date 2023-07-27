@@ -5,6 +5,7 @@ stock_monthly <- read.csv('C:/Users/NGY/Desktop/2023/Rstudy/google-stock-dataset
 stock_weekly <- read.csv('C:/Users/NGY/Desktop/2023/Rstudy/google-stock-dataset-Weekly.csv')
 colSums(is.na(stock_weekly))
 colSums(is.na(stock_monthly)) # NA 값이 없음.
+#현재 두 값의 Date는 string 형태로 있기에, Date 처럼 쓰기 위해 전환
 stock_monthly$Date <- as.Date(stock_monthly$Date)
 stock_weekly$Date <- as.Date(stock_weekly$Date)
 
