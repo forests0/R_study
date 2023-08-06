@@ -52,6 +52,7 @@ findAssocs(dtm, terms = 'harvard', corlimit = 0.7)
 barplot(d[1:10, ]$freq, las = 2, names.arg = d[1:10, ]$word, col = 'lightblue', main = '발생 빈도 상위 단어', ylab = '단어 빈도')
 
 #한글로 텍스트 구름 제작
+#값 전환을 해주는 과정에서 위키피디아가 아닌 사이트로 진행을 해보려했지만, 과정이 다름을 알게됨
 kt = readLines('https://ko.wikipedia.org/wiki/%EB%B0%B1%EB%85%84_%EC%A0%84%EC%9F%81')
 kd = htmlParse(kt, asText = TRUE)
 kcdoc = xpathSApply(kd, '//p', xmlValue)
