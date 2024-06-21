@@ -38,3 +38,42 @@ students[[4]][3:5]
 
 students$hw <- c(8, 9, 7, 8, 10)
 students
+
+students.new <- students[1:2]
+students.new
+
+height <- c(172, 167, 181, 162, 178)
+students.new <- data.frame(students[2:3], height=height)
+students.new
+
+a <- students[2]
+a
+typeof(a)
+attributes(a)
+
+a <- students[[2]]
+a
+typeof(a)
+attributes(a)
+
+students[2:3,]
+students[,4]
+
+order(students$grade)
+
+students[order(students$grade), ]
+
+x <- c(7, 9, NA, 5, 2)
+x[x>6]
+
+subset(x, x> 6)
+
+y <- 1:5
+z <- -1:-5
+long.name <- data.frame(x, y, z)
+long.name
+
+subset(long.name, x>6)
+
+long.name[long.name$x >6, 2:3]
+subset(long.name, x>6, y:z)
