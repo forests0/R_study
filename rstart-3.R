@@ -77,3 +77,17 @@ subset(long.name, x>6)
 
 long.name[long.name$x >6, 2:3]
 subset(long.name, x>6, y:z)
+
+lapply(students[4:5], mean)
+sapply(students[4:5], mean)
+
+nrow(students)
+ncol(students)
+t(students)
+
+apply(students, 2, mean)
+apply(students[4:5], 2, mean)
+
+nrow(iris)
+head(iris)
+tail(iris)
