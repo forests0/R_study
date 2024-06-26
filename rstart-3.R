@@ -91,3 +91,16 @@ apply(students[4:5], 2, mean)
 nrow(iris)
 head(iris)
 tail(iris)
+
+sr <- read.csv('C:/Users/NGY/Desktop/Rstudy/suicide_rates.csv')
+nrow(sr)
+head(sr)
+
+Sys.getlocale()
+
+sr2 <- read.table(file="C:/Users/NGY/Desktop/Rstudy/suicide_rates.csv", header=TRUE, sep=",", fileEncoding="UTF-8")
+nrow(sr2)
+head(sr2)
+
+prov.scores <- read.table("scores.txt", header=TRUE, fileEncoding="UTF-8")
+prov.scores
