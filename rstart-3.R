@@ -104,3 +104,15 @@ head(sr2)
 
 prov.scores <- read.table("scores.txt", header=TRUE, fileEncoding="UTF-8")
 prov.scores
+
+install.packages("readxl")
+library(readxl)
+project <- read_excel("C:/Users/NGY/Desktop/Rstudy/dataMerge.xlsx", sheet = "project") 
+project
+
+project <- read_excel("C:/Users/NGY/Desktop/Rstudy/dataMerge.xlsx") 
+project
+
+sr$Avg <- (sr$Males + sr$Females) / 2
+head(sr)
+write.csv(sr, file = "C:/Users/NGY/Desktop/Rstudy/sr.csv")
