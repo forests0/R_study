@@ -116,3 +116,19 @@ project
 sr$Avg <- (sr$Males + sr$Females) / 2
 head(sr)
 write.csv(sr, file = "C:/Users/NGY/Desktop/Rstudy/sr.csv")
+
+install.packages("writexl")
+library(writexl)
+write_xlsx(students, "C:/Users/NGY/Desktop/Rstudy/students1.xlsx")
+write_xlsx(list(students=students, sr=sr, project=project), "C:/Users/NGY/Desktop/Rstudy/multipleData.xlsx")
+
+x <- 1:3; x
+y <- matrix(4:12, nrow=3, ncol=3); y
+z <- data.frame(x, y); z
+save(x, y, z, file = "C:/Users/NGY/Desktop/Rstudy/xyz.RData")
+
+rm(x, y, z)
+x; y; z
+
+load("C:/Users/NGY/Desktop/Rstudy/xyz.RData")
+x; y; z
