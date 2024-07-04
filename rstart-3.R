@@ -132,3 +132,26 @@ x; y; z
 
 load("C:/Users/NGY/Desktop/Rstudy/xyz.RData")
 x; y; z
+
+search()
+obj <- ls()
+rm(list=obj[which(obj != "students")])
+ls()
+
+rm(obj)
+objects()
+
+retake
+
+attach(students)
+retake
+
+search()
+
+retake[1] <- NA
+retake
+
+students$retake
+
+detach(students)
+search()
